@@ -1,15 +1,25 @@
 #include "main.h"
-#include <string.h>
 
 /**
- * _strncat -> function to append some charx
- * @dest: first param
- * :src: second param
- * @n: 3rd param
- * REturn: string
+ * _strncat - a function that concatenates two strings
+ * @dest:copy to
+ * @src: copy from
+ * @n: n
+ * Return: Always 0 (Success)
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	strncat(dest, src, n);
+	int i, co;
+
+	for (i = 0; dest[i] != '\0'; i++)
+	{
+	}
+
+	for (co = 0; co < n; co++)
+	{
+		dest[i + co] = src[co];
+		if (src[co] == '\0')
+			co = n;
+	}
 	return (dest);
 }

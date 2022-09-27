@@ -1,33 +1,24 @@
 #include "main.h"
 
 /**
- *_strspn - gets the length of a prefix substring
+ *_strchr - locates a character in a string
  *
- *@s: pointer that contains the string to be evaluated
- *@accept: pointer that contains the substring that will condition s
+ *@s: pointer that contains the address of the string
+ *@c: character that needs to be located with in the string
  *
- *Return: length of s which contains characters in accept
+ *Return: address of the first occurrence of c in the string
  */
-unsigned int _strspn(char *s, char *accept)
+char *_strchr(char *s, char c)
 {
-	int i;
-	int j;
-	int k;
+	char *i = s;
 
-	for (i = 0; s[i] != 0; i++)
+	while (*i != 0 && *i != c)
 	{
-		k = 0;
-		for (j = 0; accept[j] != 0; j++)
-		{
-			if (s[i] == accept[j])
-			{
-				k = 1;
-			}
-		}
-		if (k == 0)
-		{
-			break;
-		}
+		i++;
+	}
+	if (*i != c)
+	{
+		return (0);
 	}
 	return (i);
 }
